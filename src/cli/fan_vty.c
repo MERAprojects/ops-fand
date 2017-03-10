@@ -152,7 +152,7 @@ vtysh_ovsdb_fan_show ()
                     ovsrec_fan_get_rpm (row,OVSDB_TYPE_INTEGER);
                 if (at)
                     rpm=at->keys->integer;
-                vty_out (vty,"%-13s%-7s%-15s%-14s%-8ld%s",
+                vty_out (vty,"%-13s%-7s%-15s%-14s%-8"PRId64"%s",
                         row->name,row->speed,
                         ((0 == strncmp(row->direction , "f2b",3))?
                                 "front-to-back":"back-to-front"),
